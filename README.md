@@ -3,6 +3,7 @@
 Fin_Track is a full-stack MERN application that empowers users to manage their stock portfolios, track real-time trades, maintain a watchlist, and visualize market trends. Whether you're an active trader or a casual investor, Fin_Track simplifies the process of tracking assets and optimizing investments.
 
 🚀 Features
+
 🔐 User Authentication
 
 Secure sign-up and login using JWT-based authentication
@@ -36,6 +37,7 @@ Toggle dark/light theme for better UX
 Clean dashboard with intuitive navigation and responsive layout
 
 🛠️ Tech Stack
+
 Frontend:
 
 React.js
@@ -65,9 +67,6 @@ JWT (Authentication)
 dotenv (Secrets Management)
 
 📂 Folder Structure
-pgsql
-Copy
-Edit
 fin_track/
 │
 ├── backend/
@@ -89,25 +88,17 @@ fin_track/
 │   └── index.html
 │
 └── README.md
+
 📦 Setup Instructions
 🔧 Backend Setup
-bash
-Copy
-Edit
 cd backend
 npm install
 npm run start
 Make sure to add a .env file with:
-
-ini
-Copy
-Edit
 MONGO_URI=your_mongodb_connection
 JWT_SECRET=your_jwt_secret
+
 🌐 Frontend Setup
-bash
-Copy
-Edit
 cd frontend
 npm install
 npm run dev
