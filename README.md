@@ -1,4 +1,5 @@
 📈 Fin_Track – Stock Portfolio Tracker
+
 Fin_Track is a full-stack MERN application that empowers users to manage their stock portfolios, track real-time trades, maintain a watchlist, and visualize market trends. Whether you're an active trader or a casual investor, Fin_Track simplifies the process of tracking assets and optimizing investments.
 
 🚀 Features
