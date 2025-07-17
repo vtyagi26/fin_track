@@ -1,112 +1,116 @@
-📈 Fin_Track – Stock Portfolio Tracker
+# Stock-it
 
-Fin_Track is a full-stack MERN application that empowers users to manage their stock portfolios, track real-time trades, maintain a watchlist, and visualize market trends. Whether you're an active trader or a casual investor, Fin_Track simplifies the process of tracking assets and optimizing investments.
+A comprehensive stock trading dashboard, built to give you a seamless experience—from tracking real-time market data to managing your portfolio—all wrapped in an intuitive UI.
 
-🚀 Features
+## Key Technologies
 
-🔐 User Authentication
+* **React (Vite) + Bootstrap**: Smooth, modern frontend
+* **Node.js + Express**: Fast, reliable server
+* **MongoDB (Mongoose)**: Flexible, scalable database
+* **JWT + Bcrypt.js**: Secure authentication
+* **Finnhub API**: Live stock quotes and indices
 
-Secure sign-up and login using JWT-based authentication
+## Primary Features
 
-💼 Portfolio Management
+* **Secure User Accounts**: Sign up, log in, and log out with HTTP-only cookies
+* **Dashboard**: View holdings, open positions, order history, and funds at a glance
+* **Watchlist**: Add symbols, see live price updates, and execute buy/sell actions
+* **Responsive Design**: Adapts flawlessly across desktop and mobile
 
-View live portfolio stats including invested value, returns, and profit/loss
+## Setup & Local Development
 
-📊 Real-Time Trade Tracking
+1. **Clone & Remote**
 
-Log buy/sell trades with automatic updates to holdings
+   ```bash
+   git clone <your-fork-url>.git
+   cd Stock-it
+   ```
 
-🧾 Trade History
+2. **Backend**
 
-View and manage past transactions with filters and sorting
+   ```bash
+   cd backend
+   npm install
+   cp .env.sample .env    # fill: PORT, MONGODB_URI, JWT_SECRET, CLIENT_URL
+   npm run dev
+   ```
 
-⭐ Watchlist
+3. **Public Frontend**
 
-Monitor stocks you're interested in without adding them to your portfolio
+   ```bash
+   cd ../frontend
+   npm install
+   cp .env.sample .env    # set: REACT_APP_BACKEND_URL, REACT_APP_API_KEY, etc.
+   npm run dev
+   ```
 
-📈 Data Visualizations
+4. **User Dashboard**
 
-Use Recharts to see trends in performance over time
+   ```bash
+   cd ../dashboard
+   npm install
+   cp .env.sample .env    # match frontend variables for dashboard
+   npm run dev
+   ```
 
-🌙 Dark Mode
+## Environment Variables
 
-Toggle dark/light theme for better UX
+### backend/.env
 
-✅ Optimized UX
+```
+PORT=3002
+MONGODB_URI=mongodb+srv://<user>:<pass>@cluster0.mongodb.net/stock-it-db
+JWT_SECRET=your_super_secret
+CLIENT_URL=http://localhost:*YOUR_FRONTEND_PORT*
+```
 
-Clean dashboard with intuitive navigation and responsive layout
+### frontend/.env & dashboard/.env
 
-🛠️ Tech Stack
+```
+REACT_APP_BACKEND_URL=http://localhost:3002
+REACT_APP_DASHBOARD_URL=http://localhost:*DASHBOARD_PORT*
+REACT_APP_API_KEY=<your_finnhub_api_key>
+```
 
-Frontend:
+## API Routes
 
-React.js
+| Path         | Method | Purpose                     |
+| ------------ | ------ | --------------------------- |
+| `/signup`    | POST   | Register a new user         |
+| `/login`     | POST   | Authenticate and set cookie |
+| `/logout`    | POST   | Clear user session cookie   |
+| `/verify`    | GET    | Check active user session   |
+| `/holdings`  | GET    | Fetch current holdings      |
+| `/positions` | GET    | Retrieve open positions     |
+| `/orders`    | POST   | Submit a new trade order    |
 
-Tailwind CSS
+## Project Layout
 
-Recharts (for visualizations)
-
-Axios (API calls)
-
-SCSS Modules
-
-Context API (for global state)
-
-Backend:
-
-Node.js
-
-Express.js
-
-MongoDB (MongoDB Atlas)
-
-Mongoose
-
-JWT (Authentication)
-
-dotenv (Secrets Management)
-
-📂 Folder Structure
-fin_track/
-│
-├── backend/
+```
+stock-it/
+├── backend/     # Express server & MongoDB models
 │   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── services/
-│   └── server.js
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── contexts/
-│   │   ├── data/
-│   │   ├── charts/
-│   │   ├── assets/
-│   │   └── App.jsx
-│   └── index.html
-│
-└── README.md
+│   ├── middleware/
+│   └── index.js
+├── frontend/    # Public site (login & signup)
+├── dashboard/   # Private user interface
+│   ├── components/
+│   └── styles/
+└── README.md    # This document
+```
 
-📦 Setup Instructions
-🔧 Backend Setup
-cd backend
-npm install
-npm run start
-Make sure to add a .env file with:
-MONGO_URI=your_mongodb_connection
-JWT_SECRET=your_jwt_secret
+## Screenshot Gallery
 
-🌐 Frontend Setup
-cd frontend
-npm install
-npm run dev
-📌 Upcoming Features
-💹 Integration with real-time stock price APIs (e.g., Alpha Vantage, Finnhub)
+![Homepage Sketch](./screenshots/home.png)
+![Sign Up](./screenshots/signup.png)
+![Main Dashboard](./screenshots/dashboard.png)
 
-🧠 AI-based trade recommendations
+## Acknowledgements
 
-📥 Export trade history as CSV
+* Market data powered by [Finnhub.io](https://finnhub.io)
+* UI components courtesy of Bootstrap
 
-🔔 Price alerts and notifications
+## Maintainer
+
+**Your Name** — Full-stack Developer
+License: MIT © 2025
