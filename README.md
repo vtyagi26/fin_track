@@ -114,17 +114,6 @@ Runs on `http://localhost:5173`
 
 ---
 
-### 4️⃣ Dashboard Setup
-
-```bash
-cd ../dashboard
-npm install
-cp .env.sample .env
-npm run dev
-```
-
-Dashboard available at `http://localhost:5174`
-
 ---
 
 ## 🌐 API Endpoints
